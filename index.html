@@ -131,72 +131,18 @@
       <section id="skills" class="section-divider">
         <h2 class="fw-bold mb-4">Skills</h2>
 
-        <div class="row">
-          <!-- Programming -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 hover-shadow transition">
-              <div class="card-header fw-bold">Programming</div>
-              <ul id="programmingList" class="list-group list-group-flush">
-                <li class="list-group-item">C++</li>
-                <li class="list-group-item">HTML</li>
-                <li class="list-group-item">CSS</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Technical Interests -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100">
-              <div class="card-header fw-bold">Technical Interests</div>
-              <ul id="technicalList" class="list-group list-group-flush">
-                <li class="list-group-item">Web Development</li>
-                <li class="list-group-item">Debugging</li>
-                <li class="list-group-item">Electronics</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Soft Skills -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100">
-              <div class="card-header fw-bold">Soft Skills</div>
-              <ul id="softList" class="list-group list-group-flush">
-                <li class="list-group-item">Communication</li>
-                <li class="list-group-item">Collaboration</li>
-                <li class="list-group-item">Problem-Solving</li>
-              </ul>
-            </div>
-          </div>
+        <div class="mb-3">
+          <input
+            id="skillInput"
+            type="text"
+            class="form-control"
+            placeholder="Enter a skill"
+          />
         </div>
-        <!--ADD SKILL BUTTON -->
-        <div class="row justify-content-center mb-4">
-          <div class="col-md-4">
-            <div class="card h-100 p-3 shadow-sm hover-shadow transition">
-              <label for="newSkill" class="form-label fw-bold"
-                >Add a Skill</label
-              >
 
-              <div class="input-group mb-2">
-                <input
-                  type="text"
-                  id="newSkill"
-                  class="form-control"
-                  placeholder="Enter a skill"
-                />
-              </div>
+        <button id="addSkillBtn" class="btn btn-primary mb-3">Add Skill</button>
 
-              <select id="skillCategory" class="form-select mb-3">
-                <option value="programming">Programming</option>
-                <option value="technical">Technical Interests</option>
-                <option value="soft">Soft Skills</option>
-              </select>
-
-              <button id="addSkillBtn" class="btn btn-primary w-100">
-                Add
-              </button>
-            </div>
-          </div>
-        </div>
+        <ul id="skillsList" class="list-group"></ul>
       </section>
 
       <!-- PROJECTS -->

@@ -3,6 +3,58 @@ console.log("Hello World!");
 let hasDownloadedResume = false;
 const name = "Patrick";
 
+// HW9 Skills Feature
+let skills = [];
+
+function addSkill() {
+  const name = $("#skillInput").val().trim();
+
+  if (name === "") return;
+
+  // Validation: no duplicates
+  const exists = skills.some((s) => s.toLowerCase() === name.toLowerCase());
+  if (exists) {
+    alert("Skill already exists!");
+    return;
+  }
+
+  skills.push(name);
+  renderSkills();
+  $("#skillInput").val("");
+}
+
+function renderSkills() {
+  $("#skillsList").empty(); // clear the list
+
+  skills.forEach((skill, index) => {
+    const li = $(`
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>${skill}</span>
+        <div>
+          <button class="editBtn btn btn-sm btn-warning me-2" data-index="${index}">Edit</button>
+          <button class="deleteBtn btn btn-sm btn-danger" data-index="${index}">X</button>
+        </div>
+      </li>
+    `);
+
+    // Smooth animation
+    li.hide().appendTo("#skillsList").fadeIn(300);
+  });
+}
+
+// Edit Skill
+$(document).on("click", ".editBtn", function () {
+  const index = $(this).data("index");
+  const currentName = skills[index];
+
+  const newName = prompt("Edit skill:", currentName);
+
+  if (newName && newName.trim() !== "") {
+    skills[index] = newName.trim();
+    renderSkills();
+  }
+});
+
 // Project Array Vars - homework8
 const projectTitles = [
   "Portfolio Website",
@@ -240,7 +292,7 @@ function loadEducationTable() {
 
 function loadExperienceTable() {
   const container = document.getElementById("experienceTable");
-  container.innerHTML = ""; 
+  container.innerHTML = "";
 
   const table = document.createElement("table");
   table.classList.add("table", "table-striped", "table-hover", "align-middle");
@@ -326,12 +378,13 @@ window.onload = function () {
   loadProjects();
   loadEducationTable();
   loadExperienceTable();
+  $("#addSkillBtn").on("click", addSkill);
 
   document.getElementById("addSkillBtn").addEventListener("click", addSkill);
   document
     .getElementById("toggleTheme")
     .addEventListener("click", function (e) {
-      e.preventDefault(); // 
+      e.preventDefault(); //
       toggleTheme();
     });
 
