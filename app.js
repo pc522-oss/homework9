@@ -6,6 +6,30 @@ const name = "Patrick";
 // HW9 Skills Feature
 let skills = [];
 
+// HW9 Navigation Menu
+const navItems = [
+  "Summary",
+  "Skills",
+  "Projects",
+  "Education",
+  "Experience",
+  "Contact",
+];
+
+function renderNavMenu() {
+  $("#navMenu").empty();
+
+  navItems.forEach((item) => {
+    const li = $(`
+      <li class="nav-item">
+        <a class="nav-link" href="#${item.toLowerCase()}">${item}</a>
+      </li>
+    `);
+
+    $("#navMenu").append(li);
+  });
+}
+
 function addSkill() {
   const name = $("#skillInput").val().trim();
 
@@ -64,6 +88,19 @@ $(document).on("click", ".deleteBtn", function () {
     skills.splice(index, 1);
     renderSkills();
   });
+});
+
+$(document).on("click", ".nav-link", function (e) {
+  e.preventDefault();
+
+  const target = $(this).attr("href");
+
+  $("html, body").animate(
+    {
+      scrollTop: $(target).offset().top - 50,
+    },
+    600,
+  );
 });
 
 // Project Array Vars - homework8
@@ -365,6 +402,7 @@ window.onload = function () {
   loadEducationTable();
   loadExperienceTable();
   $("#addSkillBtn").on("click", addSkill);
+  renderNavMenu();
 
   document
     .getElementById("toggleTheme")
