@@ -1,0 +1,104 @@
+/* ---- TYPOGRAPHY ---- */
+body {
+  font-family: "Inter", sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ---- LIGHT THEME ---- */
+.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* ---- DARK THEME ---- */
+.dark-theme {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+/* ---- STYLE CUSTOMIZATION ---- */
+
+#styleControls {
+  max-width: 400px;
+  width: 100%;
+}
+/* ---- GREETING ---- */
+
+#greeting {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+/* ---- SECTION LAYOUT ---- */
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.section-divider {
+  border-bottom: 1px solid rgba(60, 74, 85, 0.15);
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+}
+
+.section-tint {
+  background-color: rgba(125, 114, 159, 0.08);
+}
+
+/* ---- HERO HEADER ---- */
+.hero-header {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("images/arizona.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  height: 45vh;
+}
+
+.download-counter {
+  color: white;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* ---- NAVBAR ---- */
+.navbar-gradient {
+  background: linear-gradient(to left, #3c4a55, #c9c4d9);
+}
+
+/* ---- PROJECT IMAGES ---- */
+.project-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ---- COMPLETION COLOR ---- */
+.status-ongoing {
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.status-completed {
+  color: #198754;
+  font-weight: 600;
+}
+
+/* ---- FOOTER ---- */
+.footer-gradient {
+  background: linear-gradient(to right, #1f3a2e, #4a5e6a);
+}

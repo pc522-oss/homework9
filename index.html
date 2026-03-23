@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Patrick Clements — Portfolio</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Styles -->
+    <link href="homework8/style.css" rel="stylesheet" />
+  </head>
+
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#navbar"
+    data-bs-offset="80"
+    tabindex="0"
+  >
+    <!-- HEADER -->
+    <header
+      class="hero-header d-flex align-items-center container-fluid justify-content-center text-center"
+    >
+      <div>
+        <h1 class="fw-bold display-4 text-white">Patrick Clements</h1>
+        <p class="text-white lead">
+          Aspiring Software Developer & Creative Technologist
+        </p>
+        <a
+          id="downloadResume"
+          href="https://docs.google.com/document/d/1YGBrNorhdvnKW9xyyOVkQM1Vu9EPwkwI/export?format=pdf"
+          class="btn btn-lg btn-primary mt-3"
+        >
+          Download Resume
+        </a>
+        <p id="downloadCounter" class="download-counter">
+          Total Downloads: <span id="downloadCount">0</span>
+        </p>
+      </div>
+    </header>
+
+    <!-- NAVBAR -->
+    <nav
+      id="navbar"
+      class="navbar navbar-dark navbar-expand-lg navbar-gradient sticky-top"
+    >
+      <div class="container-fluid">
+        <!-- THEME BUTTON-->
+        <a class="navbar-brand" href="#" id="toggleTheme">
+          <span class="d-inline-block" style="width: 24px; height: 24px">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="#3C4A55"
+              class="bi bi-lightbulb-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2 6a6 6 0 1 1 12 0c0 2.577-1.7 4.75-3 5.5v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1c-1.3-.75-3-2.923-3-5.5z"
+              />
+            </svg>
+          </span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#summary">Summary</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="greeting" class="text-center mt-4 mb-3"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="container my-5">
+      <!-- SUMMARY -->
+      <section id="summary" class="section-divider">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="fw-bold mb-4">Summary</h2>
+            <p>
+              Hello! My name is Patrick Clements, and I'm focused on building
+              clear, intuitive digital experiences. I enjoy the blend of
+              creative problem-solving and technical exploration, and I'm
+              steadily developing my skills in programming and web development.
+              Someday I really hope to make a video game.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section-divider">
+        <h2 class="fw-bold mb-4">Skills</h2>
+
+        <div class="row">
+          <!-- Programming -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 hover-shadow transition">
+              <div class="card-header fw-bold">Programming</div>
+              <ul id="programmingList" class="list-group list-group-flush">
+                <li class="list-group-item">C++</li>
+                <li class="list-group-item">HTML</li>
+                <li class="list-group-item">CSS</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Technical Interests -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-header fw-bold">Technical Interests</div>
+              <ul id="technicalList" class="list-group list-group-flush">
+                <li class="list-group-item">Web Development</li>
+                <li class="list-group-item">Debugging</li>
+                <li class="list-group-item">Electronics</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-header fw-bold">Soft Skills</div>
+              <ul id="softList" class="list-group list-group-flush">
+                <li class="list-group-item">Communication</li>
+                <li class="list-group-item">Collaboration</li>
+                <li class="list-group-item">Problem-Solving</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--ADD SKILL BUTTON - homework8-->
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-4">
+            <div class="card h-100 p-3 shadow-sm hover-shadow transition">
+              <label for="newSkill" class="form-label fw-bold"
+                >Add a Skill</label
+              >
+
+              <div class="input-group mb-2">
+                <input
+                  type="text"
+                  id="newSkill"
+                  class="form-control"
+                  placeholder="Enter a skill"
+                />
+              </div>
+
+              <select id="skillCategory" class="form-select mb-3">
+                <option value="programming">Programming</option>
+                <option value="technical">Technical Interests</option>
+                <option value="soft">Soft Skills</option>
+              </select>
+
+              <button id="addSkillBtn" class="btn btn-primary w-100">
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section-divider">
+        <h2 class="fw-bold mb-4">Projects</h2>
+        <div id="projectList" class="row"></div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="section-divider">
+        <div class="col-12">
+          <h2 class="fw-bold mb-4">Education</h2>
+          <div id="educationTable"></div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section-divider">
+        <div class="col-12">
+          <h2 class="fw-bold mb-4">Experience</h2>
+          <div id="experienceTable"></div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="container">
+          <h2 class="fw-bold mb-4 text-center">Contact</h2>
+
+          <div class="text-center mb-3">
+            <p class="mb-1">pc522@nau.edu</p>
+            <p class="mb-1">(928) 606-9665</p>
+            <p class="mb-0">Flagstaff, AZ</p>
+          </div>
+
+          <div class="d-flex justify-content-center gap-4 mt-3">
+            <a
+              href="https://github.com/pc522-oss"
+              target="_blank"
+              class="text-decoration-none d-flex align-items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="#3C4A55"
+                class="bi bi-github me-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+                  0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+                  -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+                  .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+                  -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09
+                  2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82
+                  2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01
+                  2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                />
+              </svg>
+              <span>GitHub</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/clements-patrick-m/"
+              target="_blank"
+              class="text-decoration-none d-flex align-items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="#3C4A55"
+                class="bi bi-linkedin me-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513
+                  16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526
+                  16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2
+                  -8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248
+                  -1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327
+                  1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431
+                  .568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401
+                  V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165
+                  1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0
+                  7.225z"
+                />
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="d-flex justify-content-center">
+        <div class="mt-4 p-3 border rounded" id="styleControls">
+          <h4 class="text-center">Customize Page Style</h4>
+
+          <label class="form-label mt-2">Font Size (px):</label>
+          <input
+            id="fontSizeInput"
+            type="number"
+            class="form-control text-center"
+            placeholder="e.g., 18"
+          />
+
+          <label class="form-label mt-3">Background Color:</label>
+          <input
+            id="bgColorInput"
+            type="color"
+            class="form-control form-control-color mx-auto"
+          />
+
+          <button id="applyStyles" class="btn btn-primary mt-3 w-100">
+            Apply Styles
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-gradient text-center text-white container-fluid py-4">
+      <div class="row">
+        <div class="col">
+          <p class="small mb-0">© 2026 Patrick Clements</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal fade" id="madlibModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Mad Lib Generator — Details</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <img
+              src="homework8/images/ml_console.png"
+              class="img-fluid mb-3 rounded"
+              alt=""
+            />
+
+            <p>
+              This project demonstrates user input handling, branching logic,
+              string manipulation, and dynamic story generation. The updated
+              version supports multi-word input and improved error handling.
+            </p>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="diceModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Dice Roller — Details</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <img
+              src="homework8/images/dice_1.png"
+              class="img-fluid mb-3 rounded"
+              alt=""
+            />
+            <p>
+              This program simulates tabletop dice using <code>rand()</code>. It
+              supports multiple die types, repeated rolls, and ASCII-based
+              visual output. Great practice for loops, RNG, and user-driven
+              program flow.
+            </p>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="homework8/app.js"></script>
+  </body>
+</html>
