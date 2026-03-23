@@ -55,6 +55,17 @@ $(document).on("click", ".editBtn", function () {
   }
 });
 
+// Delete Skill
+$(document).on("click", ".deleteBtn", function () {
+  const index = $(this).data("index");
+
+  // Remove from array
+  skills.splice(index, 1);
+
+  // Re-render list
+  renderSkills();
+});
+
 // Project Array Vars - homework8
 const projectTitles = [
   "Portfolio Website",
@@ -355,7 +366,6 @@ window.onload = function () {
   loadExperienceTable();
   $("#addSkillBtn").on("click", addSkill);
 
-  
   document
     .getElementById("toggleTheme")
     .addEventListener("click", function (e) {
