@@ -26,10 +26,10 @@ const projectDeadlines = [
 ];
 
 const projectImages = [
-  "homework8/images/ml_logo.png",
-  "homework8/images/dino.png",
-  "homework8/images/d20.png",
-  "homework8/images/liv-dino.png",
+  "images/ml_logo.png",
+  "images/dino.png",
+  "images/d20.png",
+  "images/liv-dino.png",
 ];
 
 // EDUCATION DATA — homework8
