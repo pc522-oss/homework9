@@ -55,15 +55,15 @@ $(document).on("click", ".editBtn", function () {
   }
 });
 
-// Delete Skill
+// Delete Skill (with animation)
 $(document).on("click", ".deleteBtn", function () {
   const index = $(this).data("index");
+  const li = $(this).closest("li");
 
-  // Remove from array
-  skills.splice(index, 1);
-
-  // Re-render list
-  renderSkills();
+  li.slideUp(300, function () {
+    skills.splice(index, 1);
+    renderSkills();
+  });
 });
 
 // Project Array Vars - homework8
