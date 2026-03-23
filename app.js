@@ -97,7 +97,7 @@ $(document).on("click", ".nav-link", function (e) {
 
   $("html, body").animate(
     {
-      scrollTop: $(target).offset().top - 50,
+      scrollTop: $(target).offset().top,
     },
     600,
   );
