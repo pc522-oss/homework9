@@ -160,31 +160,6 @@ function daysUntilDeadline(deadlineDate) {
   return Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
 }
 
-//FUNCTION FOR NEW SKILL - homework8
-
-function addSkill() {
-  const input = document.getElementById("newSkill");
-  const category = document.getElementById("skillCategory").value;
-  const skillText = input.value.trim();
-  if (skillText === "") return;
-
-  let targetList;
-
-  if (category === "programming") {
-    targetList = document.getElementById("programmingList");
-  } else if (category === "technical") {
-    targetList = document.getElementById("technicalList");
-  } else if (category === "soft") {
-    targetList = document.getElementById("softList");
-  }
-
-  const newItem = document.createElement("li");
-  newItem.classList.add("list-group-item");
-  newItem.textContent = skillText;
-
-  targetList.appendChild(newItem);
-  input.value = "";
-}
 //FUNCTION FOR PROJECT ARRAY - homework8
 
 function loadProjects() {
@@ -380,7 +355,7 @@ window.onload = function () {
   loadExperienceTable();
   $("#addSkillBtn").on("click", addSkill);
 
-  document.getElementById("addSkillBtn").addEventListener("click", addSkill);
+  
   document
     .getElementById("toggleTheme")
     .addEventListener("click", function (e) {
