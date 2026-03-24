@@ -150,7 +150,6 @@ const educationData = [
   },
 ];
 
-
 const experienceData = [
   {
     company: "Single Speed Coffee Roasters",
@@ -419,9 +418,6 @@ window.onload = function () {
     .getElementById("applyStyles")
     .addEventListener("click", applyCustomStyles);
 
-  const daysLeft = daysUntilDeadline("2026-03-15");
-  console.log("Days until project deadline:", daysLeft);
-
   const resumeButton = document.getElementById("downloadResume");
 
   const counterEl = document.getElementById("downloadCount");
@@ -446,11 +442,5 @@ window.onload = function () {
     alert("Your resume was downloaded successfully!");
 
     window.location.href = resumeButton.href;
-  });
-  resumeButton.addEventListener("click", function () {
-    if (!hasDownloadedResume) {
-      setTimeout(() => alert("Your resume was downloaded successfully!"), 2000);
-      hasDownloadedResume = true;
-    }
   });
 };
