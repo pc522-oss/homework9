@@ -97,42 +97,44 @@ $(document).on("click", ".nav-link", function (e) {
 
   $("html, body").animate(
     {
-      scrollTop: $(target).offset().top,
+      scrollTop: $(target).offset().top - 50,
     },
     600,
   );
 });
 
-// Project Array Vars - homework8
-const projectTitles = [
-  "Portfolio Website",
-  "Dino Runner Game",
-  "Cybersecurity Lab",
-  "Pixel Sprite Creation",
+// HW9 Projects Array (converted from HW8)
+const projects = [
+  {
+    title: "Portfolio Website",
+    description:
+      "A personal portfolio showcasing my skills, projects, and resume.",
+    deadline: new Date("2026-03-30"),
+    imageURL: "images/ml_logo.png",
+  },
+  {
+    title: "Dino Runner Game",
+    description:
+      "A simple browser-based game inspired by the Chrome Dino Runner.",
+    deadline: new Date("2026-04-10"),
+    imageURL: "images/dino.png",
+  },
+  {
+    title: "Cybersecurity Lab",
+    description:
+      "Hands-on security exercises focusing on vulnerabilities and defenses.",
+    deadline: new Date("2026-03-01"),
+    imageURL: "images/d20.png",
+  },
+  {
+    title: "Pixel Sprite Creation",
+    description:
+      "A little pixel art project where I designed a few fun characters.",
+    deadline: new Date("2026-06-14"),
+    imageURL: "images/liv-dino.png",
+  },
 ];
 
-const projectDescriptions = [
-  "A personal portfolio showcasing my skills, projects, and resume.",
-  "A simple browser-based game inspired by the Chrome Dino Runner.",
-  "Hands-on security exercises focusing on vulnerabilities and defenses.",
-  "A little pixel art project where I designed a few characters and cleaned them up into game-ready sprites. Mostly about learning LibreSprite and getting comfortable with shading and exporting.",
-];
-
-const projectDeadlines = [
-  "2026-03-30",
-  "2026-04-10",
-  "2026-03-01",
-  "2026-06-14",
-];
-
-const projectImages = [
-  "images/ml_logo.png",
-  "images/dino.png",
-  "images/d20.png",
-  "images/liv-dino.png",
-];
-
-// EDUCATION DATA — homework8
 const educationData = [
   {
     institution: "Northern Arizona University",
@@ -148,7 +150,7 @@ const educationData = [
   },
 ];
 
-// EXPERIENCE DATA — homework8
+
 const experienceData = [
   {
     company: "Single Speed Coffee Roasters",
@@ -208,16 +210,17 @@ function daysUntilDeadline(deadlineDate) {
   return Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
 }
 
-//FUNCTION FOR PROJECT ARRAY - homework8
+//NEW PROJECT ARRAY FUNCTION
 
-function loadProjects() {
-  const container = document.getElementById("projectList");
-  container.innerHTML = "";
+function renderProjects() {
+  const container = $("#projectList");
+  container.empty();
 
-  for (let i = 0; i < projectTitles.length; i++) {
+  projects.forEach((project) => {
     const today = new Date();
-    const deadline = new Date(projectDeadlines[i]);
+    const deadline = new Date(project.deadline);
 
+    // Determine status
     let statusText = "";
     let statusClass = "";
 
@@ -229,36 +232,45 @@ function loadProjects() {
       statusClass = "status-completed";
     }
 
-    const projectHTML = `
-    <div class="col-md-6 mb-4">
-      <div class="card h-100 shadow-sm hover-shadow transition d-flex">
-        <div class="row g-0 flex-grow-1">
-          <div class="col-4 d-flex align-items-stretch">
-            <img
-              src="${projectImages[i]}"
-              alt="${projectTitles[i]} Logo"
-              class="img-fluid rounded-start project-img w-100 h-100"
-            />
-          </div>
+    // Format date for display
+    const formattedDate = deadline.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
 
-          <div class="col-8">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">${projectTitles[i]}</h5>
-              <p class="card-text">${projectDescriptions[i]}</p>
-              <p class="card-text"><strong>Deadline:</strong> ${projectDeadlines[i]}</p>          
-              <p class="card-text"><strong>Status:</strong> <span class="${statusClass}">${statusText}</span></p>
+    // Build card
+    const card = $(`
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 shadow-sm hover-shadow transition d-flex">
+          <div class="row g-0 flex-grow-1">
+            <div class="col-4 d-flex align-items-stretch">
+              <img
+                src="${project.imageURL}"
+                alt="${project.title} Image"
+                class="img-fluid rounded-start project-img w-100 h-100"
+              />
+            </div>
+
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">${project.title}</h5>
+                <p class="card-text">${project.description}</p>
+                <p class="card-text"><strong>Deadline:</strong> ${formattedDate}</p>
+                <p class="card-text">
+                  <strong>Status:</strong>
+                  <span class="${statusClass}">${statusText}</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  `;
+    `);
 
-    container.innerHTML += projectHTML;
-  }
+    container.append(card);
+  });
 }
-
-//FUNCTION FOR EDUCATION TABLE - homework8
 
 function loadEducationTable() {
   const container = document.getElementById("educationTable");
@@ -311,8 +323,6 @@ function loadEducationTable() {
   container.appendChild(table);
 }
 
-//FUNCTION FOR EXPERIENCE TABLE - homework8
-
 function loadExperienceTable() {
   const container = document.getElementById("experienceTable");
   container.innerHTML = "";
@@ -364,8 +374,6 @@ function loadExperienceTable() {
   container.appendChild(table);
 }
 
-//DARK MODE TOGGLE FUNCTION - homework8
-
 function toggleTheme() {
   const body = document.body;
 
@@ -377,8 +385,6 @@ function toggleTheme() {
     body.classList.add("dark-theme");
   }
 }
-
-//STYLE FUNCTION
 
 function applyCustomStyles() {
   const fontSize = document.getElementById("fontSizeInput").value;
@@ -396,13 +402,11 @@ function applyCustomStyles() {
 window.onload = function () {
   showGreeting(name);
 
-  //NEW FUNCTION CALLS - homework8
-
-  loadProjects();
   loadEducationTable();
   loadExperienceTable();
   $("#addSkillBtn").on("click", addSkill);
   renderNavMenu();
+  renderProjects();
 
   document
     .getElementById("toggleTheme")
