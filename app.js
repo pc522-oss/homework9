@@ -422,6 +422,7 @@ window.onload = function () {
   $("#addSkillBtn").on("click", addSkill);
   renderNavMenu();
   renderProjects();
+  renderSkills();
   $("#sortProjects").on("click", sortProjectsByDeadline);
 
   $("#skillInput").on("keydown", function (e) {
