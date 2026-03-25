@@ -421,6 +421,7 @@ window.onload = function () {
     }
 
     e.preventDefault();
+    this.blur(); // ← THIS removes Bootstrap’s focus scroll correction
 
     const navHeight = $(".navbar").outerHeight();
 
@@ -429,7 +430,6 @@ window.onload = function () {
         scrollTop: $(target).offset().top - navHeight,
       },
       600,
-      "swing",
     );
   });
 
