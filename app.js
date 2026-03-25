@@ -100,24 +100,6 @@ $(document).on("click", ".deleteBtn", function () {
   });
 });
 
-$(document).on("click", ".nav-link", function (e) {
-  const target = $(this).attr("href");
-
-  if (!target || target === "#") {
-    e.preventDefault();
-    return;
-  }
-
-  e.preventDefault();
-
-  $("html, body").animate(
-    {
-      scrollTop: $(target).offset().top - 50,
-    },
-    600,
-  );
-});
-
 // HW9 Projects Array (converted from HW8)
 const projects = [
   {
@@ -429,6 +411,24 @@ window.onload = function () {
   renderProjects();
   renderSkills();
   $("#sortProjects").on("click", sortProjectsByDeadline);
+
+  $(document).on("click", ".nav-link", function (e) {
+    const target = $(this).attr("href");
+
+    if (!target || target === "#") {
+      e.preventDefault();
+      return;
+    }
+
+    e.preventDefault();
+
+    $("html, body").animate(
+      {
+        scrollTop: $(target).offset().top - 50,
+      },
+      600,
+    );
+  });
 
   $("#skillInput").on("keydown", function (e) {
     // ENTER key
