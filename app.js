@@ -4,7 +4,17 @@ let hasDownloadedResume = false;
 const name = "Patrick";
 
 // HW9 Skills Feature
-let skills = [];
+let skills = [
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "Cybersecurity",
+  "Web Development",
+  "Game Design",
+  "Communication",
+  "Problem Solving",
+  "Team Collaboration",
+];
 
 // HW9 Navigation Menu
 const navItems = [
