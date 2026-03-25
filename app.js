@@ -414,6 +414,9 @@ window.onload = function () {
   renderSkills();
   $("#sortProjects").on("click", sortProjectsByDeadline);
 
+  const scrollSpy = bootstrap.ScrollSpy.getOrCreateInstance(document.body);
+  scrollSpy.refresh();
+
   $(document).on("click", ".nav-link", function (e) {
     e.preventDefault();
 
