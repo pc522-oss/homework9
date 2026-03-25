@@ -30,9 +30,11 @@ function renderNavMenu() {
   $("#navMenu").empty();
 
   navItems.forEach((item) => {
+    const id = item.toLowerCase();
+
     const li = $(`
       <li class="nav-item">
-        <a class="nav-link" href="#" data-target="#${item.toLowerCase()}">${item}</a>
+        <a class="nav-link" href="#${id}" data-target="#${id}">${item}</a>
       </li>
     `);
 
