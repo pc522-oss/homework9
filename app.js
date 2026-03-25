@@ -38,16 +38,14 @@ function renderNavMenu() {
       </li>
     `);
 
-    li.hide().appendTo("#skillsList").slideDown(400);
+    $("#skillsList").append(li);
   });
 }
 
 function addSkill() {
   const name = $("#skillInput").val().trim();
-
   if (name === "") return;
 
-  // Validation: no duplicates
   const exists = skills.some((s) => s.toLowerCase() === name.toLowerCase());
   if (exists) {
     alert("Skill already exists!");
@@ -55,7 +53,14 @@ function addSkill() {
   }
 
   skills.push(name);
+
+  // Render the list first
   renderSkills();
+
+  // Animate ONLY the last item (the new one)
+  const lastItem = $("#skillsList li").last();
+  lastItem.hide().slideDown(400);
+
   $("#skillInput").val("");
 }
 
