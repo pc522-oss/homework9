@@ -271,6 +271,12 @@ function renderProjects() {
   });
 }
 
+// Sort projects by deadline (earliest first)
+function sortProjectsByDeadline() {
+  projects.sort((a, b) => a.deadline - b.deadline);
+  renderProjects();
+}
+
 function loadEducationTable() {
   const container = document.getElementById("educationTable");
   container.innerHTML = ""; // clear anything old
@@ -406,6 +412,7 @@ window.onload = function () {
   $("#addSkillBtn").on("click", addSkill);
   renderNavMenu();
   renderProjects();
+  $("#sortProjects").on("click", sortProjectsByDeadline);
 
   document
     .getElementById("toggleTheme")
