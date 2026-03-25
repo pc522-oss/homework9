@@ -418,7 +418,7 @@ window.onload = function () {
     const target = $(this).data("target");
     const navHeight = $(".navbar").outerHeight();
 
-    $("html, body").animate(
+    $("html").animate(
       {
         scrollTop: $(target).offset().top - navHeight,
       },
