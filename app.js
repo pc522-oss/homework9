@@ -3,7 +3,7 @@ console.log("Hello World!");
 let hasDownloadedResume = false;
 const name = "Patrick";
 
-// HW9 Skills Feature
+// HW9
 let skills = [
   "JavaScript",
   "HTML",
@@ -16,7 +16,6 @@ let skills = [
   "Team Collaboration",
 ];
 
-// HW9 Navigation Menu
 const navItems = [
   "Summary",
   "Skills",
@@ -54,10 +53,10 @@ function addSkill() {
 
   skills.push(name);
 
-  // Render the list first
+  // Render
   renderSkills();
 
-  // Animate ONLY the last item (the new one)
+  // Animate
   const lastItem = $("#skillsList li").last();
   lastItem.hide().slideDown(400);
 
@@ -65,7 +64,7 @@ function addSkill() {
 }
 
 function renderSkills() {
-  $("#skillsList").empty(); // clear the list
+  $("#skillsList").empty();
 
   skills.forEach((skill, index) => {
     const li = $(`
@@ -78,7 +77,6 @@ function renderSkills() {
       </li>
     `);
 
-    // Smooth animation
     $("#skillsList").append(li);
   });
 }
@@ -96,7 +94,7 @@ $(document).on("click", ".editBtn", function () {
   }
 });
 
-// Delete Skill (with animation)
+// Delete Skill 
 $(document).on("click", ".deleteBtn", function () {
   const index = $(this).data("index");
   const li = $(this).closest("li");
@@ -107,7 +105,6 @@ $(document).on("click", ".deleteBtn", function () {
   });
 });
 
-// HW9 Projects Array (converted from HW8)
 const projects = [
   {
     title: "Portfolio Website",
