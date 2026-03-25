@@ -424,6 +424,19 @@ window.onload = function () {
   renderProjects();
   $("#sortProjects").on("click", sortProjectsByDeadline);
 
+  $("#skillInput").on("keydown", function (e) {
+    // ENTER key
+    if (e.key === "Enter") {
+      e.preventDefault();
+      addSkill();
+    }
+
+    // ESCAPE key
+    if (e.key === "Escape") {
+      $(this).val(""); // clear the input
+    }
+  });
+
   document
     .getElementById("toggleTheme")
     .addEventListener("click", function (e) {
