@@ -38,7 +38,7 @@ function renderNavMenu() {
       </li>
     `);
 
-    $("#navMenu").append(li);
+    li.hide().appendTo("#skillsList").slideDown(400);
   });
 }
 
