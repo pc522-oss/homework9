@@ -74,7 +74,7 @@ function renderSkills() {
     `);
 
     // Smooth animation
-    li.hide().appendTo("#skillsList").fadeIn(300);
+    $("#skillsList").append(li);
   });
 }
 
@@ -96,7 +96,7 @@ $(document).on("click", ".deleteBtn", function () {
   const index = $(this).data("index");
   const li = $(this).closest("li");
 
-  li.slideUp(300, function () {
+  li.slideUp(400, function () {
     skills.splice(index, 1);
     renderSkills();
   });
