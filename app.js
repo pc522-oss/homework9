@@ -101,9 +101,14 @@ $(document).on("click", ".deleteBtn", function () {
 });
 
 $(document).on("click", ".nav-link", function (e) {
-  e.preventDefault();
-
   const target = $(this).attr("href");
+
+  if (!target || target === "#") {
+    e.preventDefault();
+    return;
+  }
+
+  e.preventDefault();
 
   $("html, body").animate(
     {
