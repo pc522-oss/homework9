@@ -422,11 +422,14 @@ window.onload = function () {
 
     e.preventDefault();
 
+    const navHeight = $(".navbar").outerHeight();
+
     $("html, body").animate(
       {
-        scrollTop: $(target).offset().top - 50,
+        scrollTop: $(target).offset().top - navHeight,
       },
       600,
+      "swing",
     );
   });
 
