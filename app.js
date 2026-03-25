@@ -413,16 +413,9 @@ window.onload = function () {
   $("#sortProjects").on("click", sortProjectsByDeadline);
 
   $(document).on("click", ".nav-link", function (e) {
-    const target = $(this).attr("href");
-
-    if (!target || target === "#") {
-      e.preventDefault();
-      return;
-    }
-
     e.preventDefault();
-    this.blur(); // ← THIS removes Bootstrap’s focus scroll correction
 
+    const target = $(this).data("target");
     const navHeight = $(".navbar").outerHeight();
 
     $("html, body").animate(
