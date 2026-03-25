@@ -94,7 +94,7 @@ $(document).on("click", ".editBtn", function () {
   }
 });
 
-// Delete Skill 
+// Delete Skill
 $(document).on("click", ".deleteBtn", function () {
   const index = $(this).data("index");
   const li = $(this).closest("li");
